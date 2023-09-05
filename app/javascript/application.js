@@ -44,7 +44,7 @@ function initMap(coordsPolygon) {
 // Access google maps API with the correct API KEY
 function loadGoogleMapsAPI() {
   const script = document.createElement('script');
-  script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBWwSS-kJOppfEYovVa0RlC2lyXnEfanv0&callback=initMap';
+  script.src = `https://maps.googleapis.com/maps/api/js?key=${ENV['GOOGLEAPI']}&callback=initMap`;
   document.head.appendChild(script);
 }
 

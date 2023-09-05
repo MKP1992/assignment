@@ -1,24 +1,10 @@
-# README
+# Bundle and start the server
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Open a new tab and go to code directory:
 
-* Ruby version
+curl -X POST -H "Content-Type: application/json" -d @request.json http://localhost:3000/api/v1/contact_centers
 
-* System dependencies
 
-* Configuration
+GOOGLEAPI add env variable for as Google API Key for app/javascript/application.js:47
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
