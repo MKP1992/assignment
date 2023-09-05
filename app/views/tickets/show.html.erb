@@ -1,0 +1,59 @@
+<div class="container">
+  <h1 class="text-4xl text-gray-700 px-2">Ticket <%= @ticket.request_number %></h1>
+  <div class="bg-light m-5 p-4 rounded-lg">
+    <div class="d-flex justify-content-end mt-4">
+      <%= link_to 'Back', tickets_path, class: "text-xl" %>
+    </div>
+
+    <div class="row mb-4">
+      <div class="col-4">
+        <div class="text-sm font-weight-bold text-gray-500 text-uppercase">Request Number</div>
+        <div><%= @ticket.request_number %></div>
+      </div>
+      <div class="col-4">
+        <div class="text-sm font-weight-bold text-gray-500 text-uppercase">Sequence Number</div>
+        <div><%= @ticket.sequence_number %></div>
+      </div>
+      <div class="col-4">
+        <div class="text-sm font-weight-bold text-gray-500 text-uppercase">Request Type</div>
+        <div><%= @ticket.request_type %></div>
+      </div>
+    </div>
+
+    <div class="row mb-4">
+      <div class="col-4">
+        <div class="text-sm font-weight-bold text-gray-500 text-uppercase">Request Action</div>
+        <div><%= @ticket.request_action %></div>
+      </div>
+      <div class="col-4">
+        <div class="text-sm font-weight-bold text-gray-500 text-uppercase">Due Date</div>
+        <div><%= @ticket.response_due_date_time %></div>
+      </div>
+      <div class="col-4">
+        <div class="text-sm font-weight-bold text-gray-500 text-uppercase">Primary Service Area Code</div>
+        <div><%= @ticket.primary_sa_code %></div>
+      </div>
+    </div>
+
+    <div class="row mb-4">
+      <div class="col-4">
+        <div class="text-sm font-weight-bold text-gray-500 text-uppercase">Additional Service Area Code</div>
+        <div><%= @ticket.additional_sa_codes %></div>
+      </div>
+    </div>
+    <div class="font-weight-bold text-gray-700 px-2">Excavator Info</div>
+    <div class="px-2">
+      <%= @ticket.company_name %>
+    </div>
+    <div class="text-xs px-2">
+      <%= @ticket.address %>
+    </div>
+    <div class="text-xs px-2">
+      Crew On Site: <%= @ticket.crew_on_site_status %>
+    </div>
+    <div id="map" style="height: 400px; width: 100%;" data-coords-polygon="<%= @ticket.polygon %>"></div>
+  </div>
+</div>
+<script>
+  initMap()
+</script>
